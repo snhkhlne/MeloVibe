@@ -5,7 +5,9 @@ Artist::Artist()
 {
     name = "";
     country = "";
+    category = "";
     genre = "";
+    biography = "";
 }
 
 // Parameterized Constructor
@@ -13,7 +15,9 @@ Artist::Artist(string n, string c, string g)
 {
     name = n;
     country = c;
+    category = "";
     genre = g;
+    biography = "";
 }
 
 // Get Artist Name
@@ -32,6 +36,18 @@ string Artist::getCountry() const
 string Artist::getGenre() const
 {
     return genre;
+}
+
+// Get Category
+string Artist::getCategory() const
+{
+    return category;
+}
+
+// Get Biography
+string Artist::getBiography() const
+{
+    return biography;
 }
 
 // Get All Songs
@@ -57,7 +73,9 @@ void Artist::displayArtist() const
     cout << "\n----- ARTIST INFORMATION -----\n";
     cout << "Name: " << name << endl;
     cout << "Country: " << country << endl;
+    cout << "Category: " << category << endl;
     cout << "Genre: " << genre << endl;
+    cout << "Biography: " << biography << endl;
 }
 
 // Display Artist Songs
@@ -71,12 +89,13 @@ void Artist::displaySongs() const
         return;
     }
 
-    for (int i = 0; i < songs.size(); i++)
+    for (size_t i = 0; i < songs.size(); i++)
     {
         if (songs[i] != nullptr)
         {
             cout << i + 1 << ". "
-                 << songs[i]->getTitle() << endl;
+                 << songs[i]->getTitle()
+                 << endl;
         }
     }
 }
