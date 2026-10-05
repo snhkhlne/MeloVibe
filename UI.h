@@ -28,8 +28,10 @@ private:
 
     void clearScreen();
     void pauseScreen();
+
     void printHeader(const std::string& title,
                      const std::string& subtitle = "");
+
     int getChoice(int minimum, int maximum);
 
     void welcomeScreen();
